@@ -17,7 +17,7 @@ if [ ${CHK_FD_FL_R} -eq 0 ] ; then
     mkdir "/var/log/kvm_autoboot"
 fi
 
-f_log_manager ">>> KVM_AutoBoot started. <<<" 0 "kvm_ab" "/var/log/kvm_autoboot"
+f_log_manager "KVM_AutoBoot started." 0 "kvm_ab" "/var/log/kvm_autoboot"
 
 # NOTE: The value in "$LOG_FL_PATH_N_NM" is returned by the f_log_manager function
 # and contains the path and name for the current log that was automatically generated
