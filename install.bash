@@ -85,7 +85,7 @@ TERMS_LICEN_F=""
 # NOTE: Remove old logs. By Questor
 rm -f "$SCRIPTDIR_V/installation.log"
 
-f_log_manager "You have accepted the KVM_AutoBoot license." "$SCRIPTDIR_V/installation.log" 0 "" 1
+f_log_manager "You have accepted the KVM_AutoBoot's license." "$SCRIPTDIR_V/installation.log" 0 "" 1
 
 # < --------------------------------------------------------------------------
 
