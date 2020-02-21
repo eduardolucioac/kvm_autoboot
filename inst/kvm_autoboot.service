@@ -1,0 +1,14 @@
+[Unit]
+Description=KVM_AutoBoot daemon
+
+# NOTE: Check if the "virsh" service is ready to accept requests and also place it
+# as a condition for the operation of this service. By Questor
+After=network.target libvirtd.service
+Wants=libvirtd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/kvm_autoboot/kvm_autoboot.bash
+
+[Install]
+WantedBy=multi-user.target
