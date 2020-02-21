@@ -124,13 +124,14 @@ fi
 f_up_or_inst_kvm_a() {
     f_chk_by_path_hlp "/usr/local/kvm_autoboot" "d"
     if [ ${F_CHK_BY_PATH_HLP_R} -eq 1 ] ; then
-        f_open_section
         f_div_section
         f_yes_no "KVM_AutoBoot already installed in \"/usr/local/kvm_autoboot\". Reinstall it?
  * IMPORTANT: All KVM_AutoBoot's settings (conf.bash) will be lost."
-        f_close_section
+        f_div_section
         if [ ${YES_NO_R} -eq 0 ] ; then
+            f_div_section
             f_log_manager "KVM_AutoBoot's installation and configuration has been canceled." "$SCRIPTDIR_V/installation.log" 0 "" 1
+            f_div_section
             exit 0
         else
             rm -rf "/usr/local/kvm_autoboot"
@@ -140,18 +141,25 @@ f_up_or_inst_kvm_a() {
                     # NOTE: Disable KVM_AutoBoot's service and remove the ".service"
                     # file. By Questor
                     # systemctl daemon-reload # <- TODO: Necessário!?
+                    f_div_section
+                    f_log_manager "Remove and disable OLD KVM_AutoBoot's service (kvm_autoboot.service)." "$SCRIPTDIR_V/installation.log" 0 "" 1
+                    f_div_section
                     systemctl disable kvm_autoboot.service
                     rm -rf "/usr/lib/systemd/system/kvm_autoboot.service"
 
                 ;;
                 *)
+                    f_div_section
                     f_log_manager "ERROR: Not implemented to your OS." "$SCRIPTDIR_V/installation.log" 0 "" 0
+                    f_div_section
                     f_error_exit "Not implemented to your OS."
                 ;;
             esac
         fi
     fi
+    f_div_section
     f_log_manager "KVM_AutoBoot's installation and configuration has been started." "$SCRIPTDIR_V/installation.log" 0 "" 1
+    f_div_section
 
     # NOTE: Folder where KVM_AutoBoot will be installed. By Questor
     mkdir "/usr/local/kvm_autoboot"
@@ -160,7 +168,7 @@ f_up_or_inst_kvm_a() {
     cp -v "$SCRIPTDIR_V/README.md" "/usr/local/kvm_autoboot/"
     cp -v "$SCRIPTDIR_V/inst/kvm_autoboot.bash" "/usr/local/kvm_autoboot/"
 
-    f_open_section
+    f_div_section
     f_log_manager "The \"/usr/local/kvm_autoboot/kvm_autoboot.bash\" bash script will be defined as executable." "$SCRIPTDIR_V/installation.log" 0 "" 1
     f_div_section
     chmod u+x "/usr/local/kvm_autoboot/kvm_autoboot.bash"
@@ -179,38 +187,40 @@ f_up_or_inst_kvm_a() {
         RH)
 
             # NOTE: Add and enable KVM_AutoBoot's service. By Questor
-            f_open_section
+            f_div_section
             f_log_manager "Add and enable KVM_AutoBoot's service (kvm_autoboot.service)." "$SCRIPTDIR_V/installation.log" 0 "" 1
             f_div_section
             cp -v "$SCRIPTDIR_V/inst/kvm_autoboot.service" "/usr/lib/systemd/system/"
-            # systemctl daemon-reload # <- TODO: Necessário!?
             systemctl enable kvm_autoboot.service
 
         ;;
         *)
+            f_div_section
             f_log_manager "ERROR: Not implemented to your OS." "$SCRIPTDIR_V/installation.log" 0 "" 0
+            f_div_section
             f_error_exit "Not implemented to your OS."
         ;;
     esac
 
     # NOTE: To improve aesthetics in the terminal output. By Questor
-    echo ""
+    # echo ""
 
+    f_div_section
     f_log_manager "KVM_AutoBoot's components are installed in the \"/usr/local/kvm_autoboot\" folder." "$SCRIPTDIR_V/installation.log" 0 "" 1
+    f_div_section
 }
 
-f_open_section
 f_div_section
 f_yes_no "Install KVM_AutoBoot?"
+f_div_section
 if [ ${YES_NO_R} -eq 1 ] ; then
     f_up_or_inst_kvm_a
 else
     f_div_section
     f_log_manager "KVM_AutoBoot's installation canceled." "$SCRIPTDIR_V/installation.log" 0 "" 1
-    f_close_section
+    f_div_section
     exit 0
 fi
-f_close_section
 
 # < --------------------------------------------------------------------------
 
