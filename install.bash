@@ -184,7 +184,7 @@ f_up_or_inst_kvm_a() {
             f_div_section
             cp -v "$SCRIPTDIR_V/inst/kvm_autoboot.service" "/usr/lib/systemd/system/"
             # systemctl daemon-reload # <- TODO: Necessário!?
-            systemctl enable kvm-boot-order
+            systemctl enable kvm_autoboot.service
 
         ;;
         *)
