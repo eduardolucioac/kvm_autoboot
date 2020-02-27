@@ -191,7 +191,7 @@ cd /var/log/kvm_autoboot/ && less +F $(ls -Art | tail -n 1)
 About
 -----
 
-Private_Tux 🄯 BSD-3-Clause  
+KVM_AutoBoot 🄯 BSD-3-Clause  
 Eduardo Lúcio Amorim Costa  
 Brazil-DF
 
