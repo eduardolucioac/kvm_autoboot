@@ -98,11 +98,11 @@ In the excerpt...
 INSTRUCTIONS:
 ----------------------------------
 
-  The KVM_AutoBoot is a service that starts your KVM's VMs (Virtual Machines) at the boot of your server.
+  The KVM_AutoBoot is a service that boots your KVM's VMs (virtual machines) at your server's boot.
   
-  The KVM_AutoBoot's service is started during server boot after the libvirt's service ("libvirtd.service") starts.
+  The KVM_AutoBoot's service is started during server's boot after the libvirt's service ("libvirtd.service") starts.
   
-  After starting all the VMs defined in the BOOT_ORDER list - configuration file "/usr/local/kvm_autoboot/conf/conf.bash" - respecting the start interval defined for each one, the KVM_AutoBoot's service ends. If there are no VMs defined in the BOOT_ORDER list, the KVM_AutoBoot's service stops immediately.
+  After booting all the VMs defined in the BOOT_ORDER list - configuration file "/usr/local/kvm_autoboot/conf/conf.bash" - respecting the boot's interval defined for each one, the KVM_AutoBoot's service ends. If there are no VMs defined in the BOOT_ORDER list, the KVM_AutoBoot's service stops immediately.
   
   To cancel installation at any time use Ctrl+c.
 
