@@ -172,23 +172,19 @@ systemctl start kvm_autoboot.service
 
 **NOTE:** The service will stop after starting all the VMs in the BOOT_ORDER list.
 
- > --------
+**TIPS:**
 
-TIPS:
-
- I - To check the status of the KVM_AutoBoot service...
+ I - To check the KVM_AutoBoot's service status...
 
 `
 systemctl status kvm_autoboot.service
 `;
 
- II - To track the last KVM_AutoBoot execution log...
+ II - To track the last KVM_AutoBoot's execution log...
 
 `
 cd /var/log/kvm_autoboot/ && less +F $(ls -Art | tail -n 1)
 `.
-
- <--------
 
 About
 -----
