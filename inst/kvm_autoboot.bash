@@ -55,6 +55,7 @@ for (( i=0; i < $ARR_LENGTH; i++ )) ; do
         if [ ${i} -eq $(( $ARR_LENGTH -1 )) ] ; then
         # NOTE: Applies to the last VM in the list. By Questor
 
+            f_log_manager "Booting domain $VM_NAME..." "$LOG_FL_PATH_N_NM"
             virsh start $VM_NAME > $SCRIPTDIR_V/tmp/f_p_tux_op_to_log 2>&1
             F_P_TUX_OP_TO_LOG=$(cat $SCRIPTDIR_V/tmp/f_p_tux_op_to_log)
             f_log_manager "$F_P_TUX_OP_TO_LOG" "$LOG_FL_PATH_N_NM"
@@ -66,6 +67,8 @@ for (( i=0; i < $ARR_LENGTH; i++ )) ; do
         if [ ${CUSTOM_INTERV} -lt 0 ] ; then
             CUSTOM_INTERV=$BOOT_DEF_INTERV
         fi
+
+        f_log_manager "Booting domain $VM_NAME..." "$LOG_FL_PATH_N_NM"
         virsh start $VM_NAME > $SCRIPTDIR_V/tmp/f_p_tux_op_to_log 2>&1
         F_P_TUX_OP_TO_LOG=$(cat $SCRIPTDIR_V/tmp/f_p_tux_op_to_log)
         f_log_manager "$F_P_TUX_OP_TO_LOG" "$LOG_FL_PATH_N_NM"
