@@ -24,7 +24,7 @@ f_log_manager "KVM_AutoBoot started." 0 "kvm_ab" "/var/log/kvm_autoboot"
 # by the f_log_manager function. By Questor
 LOG_FL_PATH_N_NM="$LOG_FILE_NAME"
 
-# NOTE: . By Questor
+# NOTE: Maintain the script's log schema. By Questor
 f_log_fls_management() {
 
     # NOTE: Remove output file for stdout and stderr. By Questor

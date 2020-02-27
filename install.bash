@@ -140,7 +140,6 @@ f_up_or_inst_kvm_a() {
 
                     # NOTE: Disable KVM_AutoBoot's service and remove the ".service"
                     # file. By Questor
-                    # systemctl daemon-reload # <- TODO: Necessário!?
                     f_div_section
                     f_log_manager "Remove and disable OLD KVM_AutoBoot's service (kvm_autoboot.service)." "$SCRIPTDIR_V/installation.log" 0 "" 1
                     f_div_section
@@ -177,8 +176,6 @@ f_up_or_inst_kvm_a() {
     cp -v "$SCRIPTDIR_V/conf/conf.bash" "/usr/local/kvm_autoboot/conf/"
     mkdir "/usr/local/kvm_autoboot/lib"
     cp -v "$SCRIPTDIR_V/lib/ez_i.bash" "/usr/local/kvm_autoboot/lib/"
-    # mkdir "/usr/local/kvm_autoboot/resrc"
-    # cp -v "$SCRIPTDIR_V/resrc/other.bash" "/usr/local/kvm_autoboot/resrc/"
 
     # NOTE: Folder for temporary KVM_AutoBoot files. By Questor
     mkdir "/usr/local/kvm_autoboot/tmp"
