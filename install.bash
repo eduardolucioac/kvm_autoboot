@@ -98,7 +98,7 @@ f_chk_distro
 
 read -d '' INSTRUCT_F <<"EOF"
 
-The KVM_AutoBoot is a service that starts your KVM's VMs (virtual machines) at your server's boot.
+The KVM_AutoBoot is a service that boots your KVM's VMs (virtual machines) at your server's boot.
 
 The KVM_AutoBoot's service is started during server's boot after the libvirt's service ("libvirtd.service") starts.
 
