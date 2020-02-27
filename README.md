@@ -176,13 +176,19 @@ systemctl start kvm_autoboot.service
 
 **TIPS:**
 
- I - To check the KVM_AutoBoot's service status...
+ I - To list the KVM's virtual machines names...
+
+`
+virsh list --all
+`;
+
+ II - To check the KVM_AutoBoot's service status...
 
 `
 systemctl status kvm_autoboot.service
 `;
 
- II - To track the last KVM_AutoBoot's execution log...
+ III - To track the last KVM_AutoBoot's execution log...
 
 `
 cd /var/log/kvm_autoboot/ && less +F $(ls -Art | tail -n 1)
