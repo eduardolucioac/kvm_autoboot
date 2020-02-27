@@ -10,6 +10,8 @@ The KVM_AutoBoot is a service (bash script) that boots your KVM's VMs (virtual m
 
 Currently KVM_AutoBoot is only compatible with CentOS 7, however adjusting it to work with other distros will be simple.
 
+**NOTE:** The KVM_AutoBoot uses libvirt.
+
 Install KVM_AutoBoot on CentOS 7 (example/demo)
 -----
 
