@@ -164,13 +164,11 @@ BOOT_ORDER=("VM_NAME0" CUSTOM_INTERV1 "VM_NAME1" CUSTOM_INTERV2 "VM_NAME2")
 
 NOTE: The BOOT_ORDER list - actually a bash "array" - should contain the names of the VMs in the desired boot order and the interval to be used before each VM in the sequence (in seconds). The first VM in the list will be initialized with the service and the others after the interval defined immediately before their name. If the interval is set to "-1", the default interval (BOOT_DEF_INTERV) will be used.
 
-To test, **if you want**, start the KVM_AutoBoot service with the command...
+To test - **if you want** - start the KVM_AutoBoot service with the command...
 
 ```
 systemctl start kvm_autoboot.service
 ```
-
-... that will get the service started.
 
 **NOTE:** The service will stop after starting all the VMs in the BOOT_ORDER list.
 
