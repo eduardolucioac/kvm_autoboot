@@ -1456,6 +1456,34 @@ f_about_distro() {
         F_ABOUT_DISTRO_R+=("Red Hat Enterprise Linux Server")
         F_ABOUT_DISTRO_R+=("${F_SPLIT_R_1[6]}")
         F_ABOUT_DISTRO_R+=("RedHat")
+    elif [[ $ABOUT_INFO == *"ID=fedora"* ]] ; then    
+        f_split "$ABOUT_INFO" "\n"
+        F_SPLIT_R_0=("${F_SPLIT_R[@]}")
+        TOTAL_0=${#F_SPLIT_R_0[*]}
+        for (( i=0; i<=$(( $TOTAL_0 -1 )); i++ )) ; do
+            f_split "${F_SPLIT_R_0[$i]}" "="
+            F_SPLIT_R_1=("${F_SPLIT_R[@]}")
+            TOTAL_1=${#F_SPLIT_R_1[*]}
+            for (( o=0; o<=$(( $TOTAL_1 -1 )); o++ )) ; do
+                p=$[$o+1]
+                case "${F_SPLIT_R_1[$o]}" in
+                    "NAME")
+                        f_split "${F_SPLIT_R_1[$p]}" "\""
+                        F_SPLIT_R_2=("${F_SPLIT_R[@]}")
+                        F_ABOUT_DISTRO_R+=("${F_SPLIT_R_2[1]}")
+                    ;;
+                    "VERSION_ID")
+                        f_split "${F_SPLIT_R_1[$p]}" "\""
+                        F_SPLIT_R_3=("${F_SPLIT_R[@]}")
+                        F_ABOUT_DISTRO_R+=("${F_SPLIT_R_3[1]}")
+                    ;;
+                    *)
+
+                    ;;
+                esac
+            done
+        done
+        F_ABOUT_DISTRO_R+=("RedHat")
     else
         F_ABOUT_DISTRO_R+=("Unknown")
         F_ABOUT_DISTRO_R+=("Unknown")
