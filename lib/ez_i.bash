@@ -1473,9 +1473,7 @@ f_about_distro() {
                         F_ABOUT_DISTRO_R+=("${F_SPLIT_R_2[1]}")
                     ;;
                     "VERSION_ID")
-                        f_split "${F_SPLIT_R_1[$p]}" "\""
-                        F_SPLIT_R_3=("${F_SPLIT_R[@]}")
-                        F_ABOUT_DISTRO_R+=("${F_SPLIT_R_3[1]}")
+                        F_ABOUT_DISTRO_R+=("${F_SPLIT_R_1[$p]}")
                     ;;
                     *)
 
