@@ -12,6 +12,8 @@ Currently KVM_AutoBoot is only compatible with CentOS 7, however adjusting it to
 
 **NOTE:** The KVM_AutoBoot uses libvirt.
 
+**IMPORTANT:** My life, my work and my passion is free software. Corrections, tweaks and improvements are very welcome (**pull requests** 😉)! Please consider giving us a ⭐, fork, support this project or even visit our professional profile (see [About](#about)). **Thanks!** 🥰
+
 Install KVM_AutoBoot on CentOS 7 (example/demo)
 -----
 
